@@ -1,0 +1,47 @@
+export default [
+  {
+    id: 1,
+    ticketNumber: 123,
+    summary: 'New PC for John',
+    contact: 'John Doe',
+    dateStarted: 1555016400000,
+    status: 'working', 
+  },
+  {
+    id: 2,
+    ticketNumber: 165,
+    summary: 'New Printer for John',
+    contact: 'John Doe',
+    dateStarted: 1555016400000,
+    status: 'waiting on parts', 
+  },
+  {
+    id: 3,
+    ticketNumber: 182,
+    summary: 'Setup Jane for remote access',
+    contact: 'Jane Doe',
+    dateStarted: 1555016400000,
+    status: 'scheduled', 
+  },
+  {
+    id: 4,
+    ticketNumber: 199,
+    contact: 'John  Doe',
+    dateStarted: 1555016400000,
+    status: 'working', 
+  },
+  {
+    id: 5,
+    ticketNumber: 205,
+    contact: 'John Doe',
+    dateStarted: 1555016400000,
+    status: 'working', 
+  },
+  {
+    id: 6,
+    ticketNumber: 215,
+    contact: 'John Doe',
+    dateStarted: 1555016400000,
+    status: 'working', 
+  },
+]
