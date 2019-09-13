@@ -17,13 +17,7 @@ import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 
 // TODO Import schema from Server
 const schema = {
-  firstName: {
-    presence: { allowEmpty: false, message: 'is required' },
-    length: {
-      maximum: 32
-    }
-  },
-  lastName: {
+  name: {
     presence: { allowEmpty: false, message: 'is required' },
     length: {
       maximum: 32
@@ -164,6 +158,14 @@ const SignUp = props => {
 
   const handleSignUp = event => {
     event.preventDefault();
+    const url = 'http://127.0.01:5000/api/user/register';
+    fetch(url, {
+      method: 'POST',
+      body: JSON.stringify(formState.values),
+      headers: { Accept: 'application/json', 'Content-Type': 'application/json' }
+    }).then(res => res.json())
+    .then(response => console.log('Success:', JSON.stringify(response)))
+    .catch(error => console.error('Error:', error));
     history.push('/');
   };
 
@@ -200,30 +202,16 @@ const SignUp = props => {
             </Typography>
             <TextField
               className={classes.textField}
-              error={hasError('firstName')}
+              error={hasError('name')}
               fullWidth
               helperText={
-                hasError('firstName') ? formState.errors.firstName[0] : null
+                hasError('name') ? formState.errors.name[0] : null
               }
-              label="First name"
-              name="firstName"
+              label="Name"
+              name="name"
               onChange={handleChange}
               type="text"
-              value={formState.values.firstName || ''}
-              variant="outlined"
-            />
-            <TextField
-              className={classes.textField}
-              error={hasError('lastName')}
-              fullWidth
-              helperText={
-                hasError('lastName') ? formState.errors.lastName[0] : null
-              }
-              label="Last name"
-              name="lastName"
-              onChange={handleChange}
-              type="text"
-              value={formState.values.lastName || ''}
+              value={formState.values.name || ''}
               variant="outlined"
             />
             <TextField
