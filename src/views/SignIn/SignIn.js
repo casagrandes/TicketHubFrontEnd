@@ -12,6 +12,9 @@ import {
   Typography
 } from '@material-ui/core';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
+import Cookies from 'js-cookie';
+// import AuthContext from '../../context/AuthContext';
+
 
 const schema = {
   email: {
@@ -140,9 +143,33 @@ const SignIn = props => {
     }));
   };
 
-  const handleSignIn = event => {
+  async function checkLoginAttemp(login) {
+    try {
+      const response = await fetch('http://127.0.01:5000/api/user/login', {
+        method: 'POST',
+        body: JSON.stringify(login),
+        headers: { 'Content-Type': 'application/json' }
+      });
+      const json = await response.json();
+      return json;
+    } catch(err) {
+      console.log(err);
+      throw err;
+    }
+  }
+
+  const handleSignIn = (event) => {
     event.preventDefault();
-    history.push('/');
+    let login = formState.values;
+    checkLoginAttemp(login).then(result => {
+      if(result.authtoken) {
+        Cookies.set('token', result.authtoken, { expires: 1 });
+        history.push('/dashboard');
+      } else {
+        alert('Login Failed')
+      }
+    }).catch(err => {});
+  
   };
 
   const hasError = field =>

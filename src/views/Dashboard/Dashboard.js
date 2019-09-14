@@ -8,6 +8,7 @@ import {
   TicketByDevice,
   TicketTrend,
 } from './components';
+import Cookies from 'js-cookie';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -15,8 +16,16 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const Dashboard = () => {
+const Dashboard = (props) => {
   const classes = useStyles();
+  const { history } = props;
+
+  // Simulating a non authencatied user
+  const isUserAuthed = Cookies.get('token');
+  if(!isUserAuthed) {
+    console.log('User not signed in');
+    history.push('/')
+  }
 
   return (
     <div className={classes.root}>
