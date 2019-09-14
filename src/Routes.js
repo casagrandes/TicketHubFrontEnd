@@ -10,7 +10,6 @@ import {
   TicketList as TicketListView,
   AssetList as AssetsListView,
   Account as AccountView,
-  // Settings as SettingsView,
   SignUp as SignUpView,
   SignIn as SignInView,
   NotFound as NotFoundView
