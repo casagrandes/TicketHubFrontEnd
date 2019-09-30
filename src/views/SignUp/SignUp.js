@@ -178,16 +178,14 @@ const SignUp = props => {
         className={classes.grid}
         container
       >
-        <div className={classes.contentHeader}>
-          <IconButton onClick={handleBack}>
-            <ArrowBackIcon />
-          </IconButton>
-        </div>
         <div className={classes.contentBody}>
           <form
             className={classes.form}
             onSubmit={handleSignUp}
           >
+          <IconButton onClick={handleBack}>
+            <ArrowBackIcon />
+          </IconButton>
             <Typography
               className={classes.title}
               variant="h2"

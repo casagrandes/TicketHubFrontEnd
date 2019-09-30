@@ -182,16 +182,14 @@ const SignIn = props => {
         container
       >
         <div className={classes.content}>
-          <div className={classes.contentHeader}>
-            <IconButton onClick={handleBack}>
-              <ArrowBackIcon />
-            </IconButton>
-          </div>
           <div className={classes.contentBody}>
             <form
               className={classes.form}
               onSubmit={handleSignIn}
             >
+              <IconButton onClick={handleBack}>
+                <ArrowBackIcon />
+              </IconButton>
               <Typography
                 className={classes.title}
                 variant="h2"
