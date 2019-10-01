@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/styles';
-import { Button } from '@material-ui/core';
 
+import NewContactForm from '../NewContactForm';
 import { SearchInput } from '../../../../components';
 
 const useStyles = makeStyles(theme => ({
@@ -42,7 +42,7 @@ const ContactToolbar = props => {
     >
       <div className={classes.row}>
         <span className={classes.spacer} />
-        <Button color="primary" variant="contained">Create Contact</Button>
+        <NewContactForm />
         </div>
       <div className={classes.row}>
         <SearchInput

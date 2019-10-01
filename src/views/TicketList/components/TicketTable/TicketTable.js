@@ -38,7 +38,7 @@ const useStyles = makeStyles(theme => ({
 
 const TicketTable = props => {
   const { className, tickets, ...rest } = props;
-  console.log(tickets)
+  // console.log(tickets)
 
   const classes = useStyles();
 
@@ -54,7 +54,7 @@ const TicketTable = props => {
   };
 
   // const emptyRows = rowsPerPage - Math.min(rowsPerPage, tickets.length - page * rowsPerPage);
-  console.log(tickets[0])
+  // console.log(tickets[0])
   return (
     <Card
       {...rest}
