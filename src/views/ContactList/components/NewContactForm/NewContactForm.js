@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { makeStyles } from '@material-ui/styles';
 import { Button } from '@material-ui/core';
 import Dialog from '@material-ui/core/Dialog';
@@ -8,7 +8,7 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import MenuItem from '@material-ui/core/MenuItem';
 
 import { Formik, Field, Form } from 'formik';
-import { TextField, Select } from 'formik-material-ui';
+import { TextField} from 'formik-material-ui';
 
 const useStyles = makeStyles(theme => ({
   root: {},
