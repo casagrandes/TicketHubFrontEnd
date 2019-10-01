@@ -24,7 +24,7 @@ const Dashboard = (props) => {
   const isUserAuthed = Cookies.get('token');
   if(!isUserAuthed) {
     console.log('User not signed in');
-    history.push('/')
+    history.push('/sign-in')
   }
 
   return (
